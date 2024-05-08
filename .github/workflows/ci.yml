@@ -40,3 +40,7 @@ jobs:
 
   publish: 
       needs: build
+      steps:
+      # Runs a single command using the runners shell
+      - name: Run a one-line script second time
+        run: echo Hello, world! {second time}

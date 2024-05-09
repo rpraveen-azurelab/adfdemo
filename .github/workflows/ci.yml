@@ -40,7 +40,11 @@ jobs:
 
   publish: 
       needs: build
+      runs-on: ${{matrix.os}}
+      strategy:
+        matrix:
+          os: [ubuntu-latest,  windows-latest, macOS-latest]
       steps:
       # Runs a single command using the runners shell
-      - name: Run a one-line script second time
-        run: echo Hello, world! {second time}
+      - name: Run a one-line script third time
+        run: echo Hello, world! {third time}
